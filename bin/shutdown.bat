@@ -1,0 +1,1 @@
+fab pwd shutdown
