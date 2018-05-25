@@ -1,15 +1,19 @@
 from fabric.api import run, env, sudo
 
-env.hosts =['some-user-id@127.0.0.1:10112']
-env.password = 'some-user-password'
+env.hosts =['some-userid@127.0.0.1:10112']
+env.password = 'some-password'
 
 
 def pwd():
     run('pwd')
 
 
-def shutdown():
-    sudo('shutdown -P 00')
+def shutdown(time='00'):
+    sudo('shutdown -P '+time)
+
+
+def rebooting(time='00'):
+    sudo('shutdown -r '+time)
 
 
 # fab smart_mon:/dev/sdb
